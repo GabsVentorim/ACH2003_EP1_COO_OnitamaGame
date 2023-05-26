@@ -24,7 +24,7 @@ public class Position {
      * @return Um valor int representando o eixo X
      */
     public int getRow() {
-        return 0;
+        return row;
     }
 
     /**
@@ -33,6 +33,6 @@ public class Position {
      * @return Um valor int representando o eixo Y
      */
     public int getCol() {
-        return 0;
+        return col;
     }
 }
