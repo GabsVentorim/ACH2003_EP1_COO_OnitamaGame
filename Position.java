@@ -3,8 +3,8 @@
  */
 public class Position {
 
-    private Integer row;
-    private Integer col;
+    private int col;
+    private int row;
 
     /**
      * Construtor que define o valor da Linha e da Coluna da posição, baseado no
