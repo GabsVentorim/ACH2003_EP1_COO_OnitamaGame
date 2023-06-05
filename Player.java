@@ -32,8 +32,8 @@ public class Player {
     public Player(String name, Color pieceColor, Card card1, Card card2) {
         this.name = name;
         this.pieceColor = pieceColor;
-        this.cards[0] = card1;
-        this.cards[1] = card2;
+        cards[0] = card1;
+        cards[1] = card2;
     }
 
     /**
@@ -72,11 +72,11 @@ public class Player {
      *                                 e/ou na mesa
      */
     protected void swapCard(Card oldCard, Card newCard) throws InvalidCardException {
-        if(newCard != tableCard || oldCard != getCards()[0] || oldCard != getCards()[1])
+        if (newCard != tableCard || oldCard != getCards()[0] || oldCard != getCards()[1])
             throw new InvalidCardException("Carta nao esta na mao do jogador e/ou na mesa");
-        if(oldCard == getCards()[0])
+        if (oldCard == getCards()[0])
             getCards()[0] = newCard;
-        else 
+        else
             getCards()[1] = newCard;
         tableCard = oldCard;
     }
