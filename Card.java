@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -77,29 +78,19 @@ public class Card {
         Position[] roosterPositions = { new Position(+1, -1), new Position(0, -1), new Position(0, +1),
                 new Position(-1, +1) };
 
-        Card tigerCard = new Card("Tiger", Color.RED, tigerPositions);
-        cards.add(tigerCard);
+        Card tigerCard = new Card("Tiger", Color.BLUE, tigerPositions);
         Card dragonCard = new Card("Dragon", Color.RED, dragonPositions);
-        cards.add(dragonCard);
         Card frogCard = new Card("Frog", Color.RED, frogPositions);
-        cards.add(frogCard);
         Card rabbitCard = new Card("Rabbit", Color.BLUE, rabbitPositions);
-        cards.add(rabbitCard);
         Card crabCard = new Card("Crab", Color.BLUE, crabPositions);
-        cards.add(crabCard);
         Card elephantCard = new Card("Elephant", Color.RED, elephantPositions);
-        cards.add(elephantCard);
         Card gooseCard = new Card("Goose", Color.BLUE, goosePositions);
-        cards.add(gooseCard);
         Card roosterCard = new Card("Rooster", Color.RED, roosterPositions);
-        cards.add(roosterCard);
 
+        Collections.addAll(cards, tigerCard, dragonCard, frogCard, rabbitCard, crabCard, elephantCard, gooseCard,
+                roosterCard);
         Collections.shuffle(cards);
 
-        for (int i = 0; i < 3; i++) {
-            cards.remove(cards.size());
-        }
-
-        return cards.toArray(new Card[5]);
+        return cards.subList(0, 6).toArray(new Card[0]);
     }
 }

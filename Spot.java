@@ -92,9 +92,7 @@ public class Spot {
 
         if (piece.getColor() == getPiece().getColor())
             throw new IllegalMovementException("O espaço já está ocupado por uma peça da mesma cor");
-        
-        if(this.piece != null) this.piece.isDead();
-        
+
         this.piece = piece;
     }
 

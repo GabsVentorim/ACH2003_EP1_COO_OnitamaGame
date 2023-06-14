@@ -5,7 +5,6 @@ public class Piece {
 
     private final Color color;
     private final boolean isMaster;
-    private boolean isAlive;
 
     /**
      * Construtor que define a cor e o tipo da peça
@@ -16,7 +15,6 @@ public class Piece {
     public Piece(Color color, boolean isMaster) {
         this.color = color;
         this.isMaster = isMaster;
-        isAlive = true;
     }
 
     /**
@@ -35,18 +33,5 @@ public class Piece {
      */
     public boolean isMaster() {
         return isMaster;
-    }
-
-    /**
-     * Método que devolve se a peça ainda está em jogo ou não
-     * 
-     * @return Booleano true para caso esteja em jogo e false caso contrário
-     */
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void isDead() {
-        isAlive = false;
     }
 }
