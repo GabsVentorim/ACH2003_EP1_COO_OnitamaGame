@@ -6,7 +6,8 @@ public class Player {
     private final String name;
     private final Color pieceColor;
     private Card[] cards;
-    public static Card tableCard; // public para poder mudar em outra classe
+    // public static Card tableCard; // public para poder mudar em outra classe
+    // //ver de criar um get e set tableCard
 
     /**
      * Construtor que define informações básicas do jogador
@@ -32,8 +33,8 @@ public class Player {
     public Player(String name, Color pieceColor, Card card1, Card card2) {
         this.name = name;
         this.pieceColor = pieceColor;
-        cards[0] = card1;
-        cards[1] = card2;
+        Card[] cardsAux = { card1, card2 };
+        this.cards = cardsAux;
     }
 
     /**
@@ -72,12 +73,11 @@ public class Player {
      *                                 e/ou na mesa
      */
     protected void swapCard(Card oldCard, Card newCard) throws InvalidCardException {
-        if (newCard != tableCard || (oldCard != cards[0] && oldCard != cards[1]))
-            throw new InvalidCardException("Carta nao esta na mao do jogador e/ou na mesa");
+        if (oldCard != cards[0] && oldCard != cards[1])
+            throw new InvalidCardException("Carta nao esta na mao do jogador");
         if (oldCard == cards[0])
             cards[0] = newCard;
         else
             cards[1] = newCard;
-        tableCard = oldCard;
     }
 }

@@ -72,16 +72,6 @@ public class Spot {
     }
 
     /**
-     * Método que verifica se a posição é válida no tabuleiro
-     * 
-     * @return Um booleano que indica se o objeto representa uma posição válida no
-     *         tabuleiro
-     */
-    public boolean isValid() {
-        return (pos.getCol() < 5 && pos.getRow() < 5 && pos.getCol() >= 0 && pos.getRow() >= 0);
-    }
-
-    /**
      * Método que ocupa o espaço atual com a peça passada
      * 
      * @param piece A peça para ocupar este espaço
@@ -90,8 +80,9 @@ public class Spot {
      */
     protected void occupySpot(Piece piece) throws IllegalMovementException {
 
-        if (piece.getColor() == getPiece().getColor())
-            throw new IllegalMovementException("O espaço já está ocupado por uma peça da mesma cor");
+        if (getPiece() != null)
+            if (piece.getColor() == getPiece().getColor())
+                throw new IllegalMovementException("O espaco ja esta ocupado por uma peca da mesma cor");
 
         this.piece = piece;
     }

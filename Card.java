@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -91,6 +90,6 @@ public class Card {
                 roosterCard);
         Collections.shuffle(cards);
 
-        return cards.subList(0, 6).toArray(new Card[0]);
+        return cards.subList(0, 5).toArray(new Card[0]);
     }
 }
